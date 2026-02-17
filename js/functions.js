@@ -11,6 +11,30 @@ const closeModalButton = document.querySelector(".close-button");
 const modalDetails = document.getElementById("modal-details");
 const treesDisplayArea = document.getElementById("trees-display-area");
 
+
+
+function truncateDescription(text, wordLimit) {
+    if(!text) {
+        return "No description available.";
+    }
+    const words = text.split(' ');
+    if (words.length <= wordLimit) {
+        return text;
+    }
+    return words.slice(0, wordLimit).join(' ') + '...';
+} 
+
+
+// Filter plants by category
+function filterPlants(categoryName) {
+    const filtered = [];
+    for (let i = 0; i < allPlants.length; i++) {
+        if (allPlants[i].category === categoryName) {
+            filtered.push(allPlants[i]);
+        }
+    }
+    loadPlants(filtered);
+}
 // Load Categories 
 function loadCategories(categories) {
     categoryList.innerHTML = "";
@@ -65,6 +89,31 @@ function loadPlants(plants) {
      
   treeCardsContainer.appendChild(card);
     });
+}
+// Render cart items and total
+function renderCart() {
+    cartItems.innerHTML = "";
+    let total = 0;
+
+    for (let i = 0; i < cart.length; i++) {
+        const item = cart[i];
+        total += item.price;
+
+        const div = document.createElement("div");
+        div.classList.add("cart-item");
+
+        div.innerHTML = `
+            <div class="cart-item-info">
+                <span class="cart-item-name">${item.name}</span>
+                <span class="cart-item-price-quantity">৳${item.price} × 1</span>
+            </div>
+            <button onclick="removeFromCart(${i})" class="remove-button">✕</button>
+        `;
+
+        cartItems.appendChild(div);
+    }
+
+    cartTotal.textContent = `Total: ৳${total}`;
 }
 
 
