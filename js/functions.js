@@ -66,3 +66,33 @@ function loadPlants(plants) {
   treeCardsContainer.appendChild(card);
     });
 }
+
+
+//spinner visibility 
+function showSpinner() {
+    loadingSpinner.style.display = "flex";
+}
+function hideSpinner() {
+    loadingSpinner.style.display = "none";
+}
+
+async function init() { 
+    showSpinner();
+    try {
+        const catRes = await fetch("https://openapi.programming-hero.com/api/categories");
+        const catData = await catRes.json();
+        loadCategories(catData.categories  || []);
+
+        const plantRes = await fetch("https://openapi.programming-hero.com/api/plants");
+        const plantData = await plantRes.json();
+        allPlants = plantData.plants || [];
+        loadPlants(allPlants);
+    } catch(error) {
+        console.log("API failed: ", error.message);
+    } finally {
+        hideSpinner();
+    }
+}
+
+// Start app
+init();
