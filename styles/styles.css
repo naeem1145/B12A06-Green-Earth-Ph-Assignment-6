@@ -835,7 +835,46 @@ footer {
         text-align: center;
     }
 
- 
+    /* Our Impact Section */
+    .impact-section {
+        padding: 40px 20px;
+    }
+
+    .impact-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .impact-cards-container {
+        flex-direction: row; 
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .impact-card {
+        width: calc(50% - 15px); 
+        height: auto;
+    }
+
+    /* Plant a Tree Form Section */
+    .plant-form-section {
+        padding: 40px 20px;
+    }
+
+    .plant-form-title {
+        font-size: 28px;
+    }
+
+    .form-container {
+        padding: 30px;
+    }
+
+    .form-input, .form-select, .donate-button {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
 
 /* Mobile Responsive Design for 481px to 767px */
 @media (min-width: 481px) and (max-width: 768px) {
@@ -959,5 +998,38 @@ footer {
         text-align: center;
     }
 
+    /* Our Impact Section */
+    .impact-section {
+        padding: 50px 30px;
+    }
 
+    .impact-title {
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+
+    .impact-cards-container {
+        flex-direction: row;
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .impact-card {
+        width: calc(50% - 20px); 
+        height: auto;
+    }
+
+    /* Plant a Tree Section */
+    .plant-form-section {
+        padding: 50px 30px;
+    }
+
+    .plant-form-title {
+        font-size: 36px;
+    }
+
+    .form-container {
+        padding: 40px;
+    }
 }
