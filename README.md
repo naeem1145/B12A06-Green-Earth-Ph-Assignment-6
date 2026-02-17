@@ -37,3 +37,30 @@ Functionalities
 - **Dependencies:** None (Vanilla JS only)
 
 ---
+
+## 1) Difference between var, let, and const
+
+- var: Old way to declare variables. It’s function-scoped and can be redeclared or updated.
+
+- let: Modern variable. Block-scoped and can be updated but not redeclared in the same block.
+
+- const: Also block-scoped, cannot be reassigned after declaration (but object content can change).
+
+## 2) Difference between map(), forEach(), and filter()
+
+- forEach() — runs a function on each item, doesn’t return a new array.
+
+- map() — runs a function on each item and returns a new array with transformed values.
+
+- filter() — keeps only items that pass a test and returns a new filtered array.
+
+## 3) What are arrow functions in ES6?
+
+- Arrow functions are a shorter way to write functions using =>.
+- They also inherit the surrounding this (no own this). Example:
+
+- const add = (a, b) => a + b;
+
+## 5) What are template literals in ES6?
+
+- Template literals are strings written with backticks (`) instead of quotes.
