@@ -1,0 +1,963 @@
+.open-sans-normal {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Section Style */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #15803D;
+    padding: 20px 50px;
+    color: #FFFFFF;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end; 
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links :hover {
+    text-decoration: underline;
+    color: #FFC107;
+}
+
+.nav-links a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.plant-button {
+    background-color: #FACC15;
+    color: #15803D;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.plant-button:hover {
+    background-color: #FFA000;
+}
+
+/* Banner Section Style */
+.banner-section {
+    background-color: #CFF0DC;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 50px;         
+    min-height: 320px;       
+    overflow: hidden;
+}
+
+.hero-leaf {
+    position: absolute;
+    top: 0;                  
+    bottom: 0;               
+    transform: none;         
+    width: 420px;          
+    max-width: 27vw;
+    height: 100%;           
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-leaf-left {
+    left: 0;
+}
+
+.hero-leaf-right {
+    right: 0;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 0;         
+}
+
+.banner-title {
+    font-family: "Raleway", sans-serif;
+    font-size: 45px;
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 20px;
+}
+
+.banner-description {
+    font-size: 18px;
+    color: #1F2937;
+    margin-bottom: 30px;
+}
+
+.get-involved-button {
+    background-color: #FACC15;
+    color: #15803D;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.get-involved-button:hover {
+    background-color: #FFA000;
+}
+
+/* Choose Your Trees Section */
+.shop-section {
+    background-color: #F0FDF4;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+.shop-title {
+    font-size: 36px;
+    font-weight: 600;
+    color: #1F2937;
+    margin-bottom: 40px;
+}
+
+.shop-container {
+    display: grid;
+    grid-template-columns: 220px 1fr 250px;
+    gap: 10px;
+    max-width: 1300px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.categories-panel {
+    padding: 5px;
+}
+
+.panel-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1F2937;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category-list li {
+    padding: 12px 20px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    color: #4B5563;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+}
+
+.category-list li:hover {
+    background-color: #e6f5ea;
+    color: #2F883B;
+}
+
+.category-list li.active {
+    background-color: #166534;
+    color: #FFFFFF;
+}
+
+.category-list li.active::after {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #FFFFFF;
+}
+
+.trees-display-area {
+    width: 100%;
+    position: relative; 
+    min-height: 400px; 
+}
+
+.spinner-container-local {
+    display: none; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #15803D;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.tree-cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.tree-card {
+    background-color: #FFFFFF;
+    border: 1px solid #D1D5DB;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 360px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: left;
+    cursor: default;
+}
+
+.tree-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    border-color: #15803D;
+}
+
+.tree-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: #F3F4F6;
+}
+
+.tree-card-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 2px;
+}
+
+.tree-card-description {
+    font-size: 12px;
+    font-weight: 400;
+    color: #4B5563;
+}
+
+.card-details-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.card-info-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-category-tag {
+    background-color: #D1FAE5;
+    color: #15803D;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 999px;
+    display: inline-block;
+}
+
+.card-price-add {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.card-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1F2937;
+}
+
+.add-to-cart-button {
+    background-color: #15803D;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+    background-color: #166534;
+}
+
+.cart-panel {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #E5E7EB;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cart-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1F2937;
+    margin-bottom: 15px;
+}
+
+.cart-items {
+    text-align: left;
+    min-height: 150px;
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px; 
+    border-bottom: none; 
+    font-size: 15px;
+    color: #4B5563;
+    background-color: #DCFCE7; 
+    border-radius: 10px; 
+    margin-bottom: 10px;
+}
+
+.cart-item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-item-name {
+    font-weight: 600;
+    color: #1F2937;
+    font-size: 16px; 
+}
+
+.cart-item-price {
+    font-size: 14px;
+    color: #6B7280;
+    margin-top: 5px; 
+}
+
+.cart-total {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1F2937;
+    text-align: right;
+    padding-top: 10px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.remove-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #4B5563;
+    cursor: pointer;
+}
+
+/* Modal Styles */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 10; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto; 
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content-inner {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.modal-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.modal-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-name {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+    color: #1F2937;
+}
+
+.modal-category,
+.modal-price {
+    font-size: 16px;
+    color: #4B5563;
+    margin: 0;
+}
+
+.modal-description {
+    font-size: 16px;
+    color: #1F2937;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.modal-details-full {
+    font-size: 14px;
+    color: #6B7280;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+/* About Campaign Section Style */
+.about-section {
+    padding: 80px 50px;
+    text-align: center;
+    background-color: #F0FDF4;
+}
+
+.about-title {
+    font-size: 40px;
+    font-weight: 600;
+    color: #1F2937;
+    margin-bottom: 50px;
+}
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-image {
+    width: 400px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-text-container {
+    text-align: left;
+    max-width: 500px;
+}
+
+.about-description {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #1F2937;
+    margin-bottom: 20px;
+}
+
+.about-benefits {
+    padding: 0 30px;
+    margin: 0;
+}
+
+.about-benefits li {
+    font-size: 17px;
+    color: #1F2937;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+
+/* Our Impact Section Style */
+.impact-section {
+    background-color: #CFF0DC; 
+    padding: 80px 50px;
+    text-align: center;
+}
+
+.impact-title {
+    font-size: 40px;
+    font-weight: 600;
+    color: #1F2937;
+    margin-bottom: 50px;
+}
+
+.impact-cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.impact-card {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    width: 350px; 
+    height: 100px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-number {
+    font-size: 40px;
+    font-weight: 700;
+    color: #15803D;
+    margin: 0 0 10px 0;
+}
+
+.card-description {
+    font-size: 17px;
+    font-weight: 350;
+    color: #1F2937;
+    margin: 0;
+}
+
+/* Plant a Tree Form Section Style */
+.plant-form-section {
+    background-color: #166534;
+    padding: 80px 50px;
+    text-align: center;
+    color: white;
+}
+
+.plant-form-title {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.form-container {
+    background-color: #15803D;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 50px;
+    border-radius: 12px;
+}
+
+.form-input,
+.form-select {
+    width: 100%;
+    padding: 15px 0;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    text-indent: 15px; 
+}
+
+.donate-button {
+    background-color: #FACC15;
+    color: #15803D;
+    border: none;
+    padding: 15px 24px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.donate-button:hover {
+    background-color: #FFA000;
+}
+
+/* Footer Section Style */
+footer {
+    background-color: #14532D;
+    font-size: 15px;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px 0;
+}
+
+/* Mobile Responsive Design for 320px to 480px */
+@media (max-width: 480px) {
+    /* Navbar Section */
+    .header {
+        flex-direction: column;
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .plant-button {
+        display: none;
+    }
+
+    /* Banner Section */
+    .banner-section {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .hero-leaf {
+        display: none;
+    }
+
+    .banner-title {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .banner-description {
+        font-size: 14px;
+    }
+
+    .get-involved-button {
+        padding: 10px 24px;
+        font-size: 14px;
+    }
+
+    /* Choose Your Trees Section */
+    .shop-section {
+        padding: 20px 10px;
+    }
+
+    .shop-title {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .shop-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .categories-panel,
+    .cart-panel {
+        padding: 10px;
+    }
+
+    .panel-title {
+        font-size: 18px;
+    }
+
+    .trees-display-area {
+        min-height: 250px;
+    }
+
+    .tree-cards-container {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px; 
+    }
+
+    .tree-card {
+        height: auto;
+    }
+
+    .tree-card img {
+        height: 120px;
+    }
+
+    .card-details-wrapper {
+        flex-direction: column;
+    }
+
+    .card-info-top {
+        flex-direction: row; 
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .card-price {
+        font-size: 16px;
+    }
+
+    .add-to-cart-button {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    /* Cart Panel */
+    .cart-item {
+        padding: 8px 12px;
+    }
+
+    .cart-item-name {
+        font-size: 14px;
+    }
+
+    .cart-item-price-quantity {
+        font-size: 13px;
+    }
+
+    .cart-total {
+        font-size: 18px;
+    }
+
+    .remove-button {
+        font-size: 16px;
+    }
+
+    /* Modal Styles */
+    .modal-content {
+        margin: 5% auto;
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    .modal-content-inner {
+        flex-direction: row; 
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .modal-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .modal-name {
+        font-size: 22px;
+    }
+
+    .modal-description {
+        font-size: 14px;
+    }
+
+    /* About Campaign Section */
+    .about-section {
+        padding: 40px 20px;
+    }
+
+    .about-title {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .about-image {
+        width: 100%;
+    }
+
+    .about-text-container {
+        text-align: center;
+    }
+
+ 
+
+/* Mobile Responsive Design for 481px to 767px */
+@media (min-width: 481px) and (max-width: 768px) {
+    /* Navbar Section */
+    .header {
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .plant-button {
+        display: none;
+    }
+
+    /* Banner Section */
+    .banner-section {
+        flex-direction: column;
+        padding: 20px;
+        min-height: auto;
+    }
+
+    .hero-leaf {
+        display: none;
+    }
+
+    .banner-title {
+        font-size: 38px;
+        margin-bottom: 15px;
+    }
+
+    .banner-description {
+        font-size: 17px;
+        margin-bottom: 25px;
+    }
+
+    /* Choose Your Trees Section */
+    .shop-section {
+        padding: 20px 15px;
+    }
+
+    .shop-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .categories-panel,
+    .cart-panel {
+        padding: 15px;
+    }
+
+    .trees-display-area {
+        min-height: 300px;
+    }
+
+    .tree-cards-container {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 15px;
+    }
+
+    .tree-card {
+        height: auto;
+    }
+
+    .tree-card img {
+        height: 150px; 
+    }
+
+    .card-details-wrapper {
+        flex-direction: column;
+    }
+
+    .card-info-top {
+        flex-direction: row;
+        gap: 10px;
+        justify-content: flex-start;
+    }
+
+    /* Modal Styles */
+    .modal-content {
+        margin: 5% auto;
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    .modal-content-inner {
+        flex-direction: row;
+        gap: 20px;
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .modal-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* About Campaign Section */
+    .about-section {
+        padding: 50px 30px;
+    }
+    
+    .about-title {
+        font-size: 36px;
+        margin-bottom: 25px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .about-image {
+        width: 80%;
+    }
+
+    .about-text-container {
+        text-align: center;
+    }
+
+
+}

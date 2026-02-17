@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Earth</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body class="open-sans-normal">
+    <header class="header">
+        <!-- Navbar Section -->
+        <h1 class="logo">Green Earth</h1>
+        <nav class="nav">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#plant">Plant a Tree</a></li>
+            </ul>
+        </nav>
+        <button class="plant-button">Plant a Tree</button>
+    </header>
+
+    <main>
+        <!-- Banner Section -->
+        <section class="banner-section">
+            <img src="assets/hero-leaf1.png" alt="Leaf Left" class="hero-leaf hero-leaf-left">
+            <div class="banner-content">
+                <h2 class="banner-title">Plant a Tree, Grow a Future</h2>
+                <p class="banner-description">Join our mission to plant 1 million trees and make the Earth greener for future generations.</p>
+                <button class="get-involved-button">Get Involved</button>
+            </div>
+            <img src="assets/hero-leaf2.png" alt="Leaf Right" class="hero-leaf hero-leaf-right">
+        </section>
+        
+        <!-- Choose Your Plant Section -->
+        <section class="shop-section" id="gallery">
+            <h2 class="shop-title">Choose Your Trees</h2>
+            <div class="shop-container">
+                <div class="categories-panel">
+                    <h3 class="panel-title">Categories</h3>
+                    <ul class="category-list" id="category-list"></ul>
+                </div>
+                <div class="trees-display-area" id="trees-display-area">
+                    <div id="loading-spinner" class="spinner-container-local">
+                        <div class="spinner"></div>
+                    </div>
+                    <div class="tree-cards-container" id="tree-cards-container"></div>
+                </div>
+                <div class="cart-panel">
+                    <h3 class="panel-title">Your Cart</h3>
+                    <div class="cart-items" id="cart-items"></div>
+                    <div class="cart-total" id="cart-total">Total: ৳0</div>
+                </div>
+            </div>
+        </section>
+        <div id="plant-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <div id="modal-details"></div>
+            </div>
+        </div>
+
+        <!-- About Campaign Section -->
+        <section class="about-section" id="about">
+            <h2 class="about-title">About the Campaign</h2>
+            <div class="about-content">
+                <img src="assets/about.png" alt="A green plant in a pot" class="about-image">
+                <div class="about-text-container">
+                    <p class="about-description">
+                        Green Earth is a global tree plantation initiative dedicated to fighting climate change. Since our start, we've planted over 500,000 trees worldwide. By joining our campaign, you help restore forests, create habitats for wildlife, and combat global warming.
+                    </p>
+                    <ul class="about-benefits">
+                        <li>Restoration of natural habitats</li>
+                        <li>Improvement of air quality</li>
+                        <li>Support for local communities</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+    <script src="js/functions.js"></script>
+</body>
+</html>
