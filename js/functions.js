@@ -90,6 +90,29 @@ function loadPlants(plants) {
   treeCardsContainer.appendChild(card);
     });
 }
+
+// Highlight the active category
+function setActiveCategory(selected) {
+    const items = document.querySelectorAll(".category-item");
+    for (let i = 0; i < items.length; i++) {
+        items[i].classList.remove("active");
+    }
+    selected.classList.add("active");
+}
+//Add plant
+function addToCart(plantId) {
+    const selectedPlant = allPlants.find(plant => plant.id === plantId);
+    if (selectedPlant) {
+        cart.push(selectedPlant);
+        renderCart(); // কার্টে যোগ করার পর কার্টটি আবার রেন্ডার করতে হবে
+    }
+}
+// Remove plant 
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    renderCart();
+}
+
 // Render cart items and total
 function renderCart() {
     cartItems.innerHTML = "";
@@ -115,7 +138,16 @@ function renderCart() {
 
     cartTotal.textContent = `Total: ৳${total}`;
 }
+// Close the modal 
+closeModalButton.onclick = function() {
+    plantModal.style.display = "none";
+}
 
+window.onclick = function(event) {
+    if (event.target === plantModal) {
+        plantModal.style.display = "none";
+    }
+}
 
 //spinner visibility 
 function showSpinner() {
